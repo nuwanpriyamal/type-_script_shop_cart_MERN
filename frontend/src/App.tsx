@@ -50,7 +50,7 @@ function App() {
         >
           <div className="d-flex justify-content-between align-items-center">
             <LinkContainer to="/" className="header-link">
-              <Navbar.Brand>tasa practical test</Navbar.Brand>
+              <Navbar.Brand>Shopify</Navbar.Brand>
             </LinkContainer>
 
             <Navbar.Collapse>
