@@ -26,7 +26,7 @@ import OrderPage from './pages/OrderPage'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 import OrderHistoryPage from './pages/OrderHistoryPage'
 import ProfilePage from './pages/ProfilePage'
-
+// routes handling
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -44,8 +44,6 @@ const router = createBrowserRouter(
         <Route path="/profile" element={<ProfilePage />} />
       </Route>
 
-      {/* <Route path="dashboard" element={<Dashboard />} /> */}
-      {/* ... etc. */}
     </Route>
   )
 )
