@@ -5,6 +5,7 @@ import { Product } from '../models/productModel'
 import { isAuth } from '../utils'
 export const orderRouter = express.Router()
 
+// get all order by using user id
 orderRouter.get(
   '/mine',
   isAuth,
@@ -14,6 +15,7 @@ orderRouter.get(
   })
 )
 
+// one order detatils
 orderRouter.get(
   // /api/orders/:id
   '/:id',
@@ -28,6 +30,7 @@ orderRouter.get(
   })
 )
 
+//create order
 orderRouter.post(
   '/',
   isAuth,
@@ -53,6 +56,7 @@ orderRouter.post(
   })
 )
 
+// paymenet method update
 orderRouter.put(
   '/:id/pay',
   isAuth,
@@ -62,12 +66,7 @@ orderRouter.put(
     if (order) {
       order.isPaid = true
       order.paidAt = new Date(Date.now())
-      order.paymentResult = {
-        paymentId: req.body.id,
-        status: req.body.status,
-        update_time: req.body.update_time,
-        email_address: req.body.email_address,
-      }
+    
       const updatedOrder = await order.save()
 
       res.send({ order: updatedOrder, message: 'Order Paid Successfully' })
